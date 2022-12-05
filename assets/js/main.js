@@ -14,7 +14,8 @@ createApp({
             addAuthor:'',
             addYear: '',
             addImg: '',
-            addGenre: ''
+            addGenre: '',
+            isNew : false
         }
     },
     methods: {
@@ -59,6 +60,7 @@ createApp({
                 })
         },
         addNewAlbum(){
+            this.isNew = false;
             const data = {
                 name: this.addTitle,
                 author: this.addAuthor,

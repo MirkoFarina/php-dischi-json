@@ -23,6 +23,9 @@
                 <div class="logo">
                     <img src="./assets/img/logo-small.svg" alt="Logo Spotify">
                 </div>
+                <div>
+                    <button @click="isNew = !isNew" class="btn bg-primary">ADD NEW ALBUM</button>
+                </div>
                 <div class="filter-genre">
                     <button v-if="showFilters" class="btn bg-primary" @click="getGenre()"> Show Filters </button>
                     <a v-if="isRefresh" class="btn bg-primary" href="index.php">Show All</a>
@@ -81,7 +84,7 @@
                             </div>
                         </div>
                 </div>  
-                <div class="add-new-album">
+                <div v-if="isNew" class="add-new-album">
                     <div>
                         <label for="name-album" class="form-label">Inserisci il titolo dell'Album</label>
                         <input v-model.trim="addTitle" type="text" class="form-control" id="name-album">
