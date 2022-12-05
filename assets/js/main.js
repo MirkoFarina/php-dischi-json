@@ -8,7 +8,8 @@ createApp({
             description: [],
             isOver: false,
             genreAlbums: [],
-            showFilters: true
+            showFilters: true,
+            isRefresh: false
         }
     },
     methods: {
@@ -43,6 +44,7 @@ createApp({
             });
         },
         getByFilter(album) {
+            this.isRefresh = true;
             const data = new FormData();
             data.append('getGenre', album);
 
