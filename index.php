@@ -29,21 +29,21 @@
         <main>
             <div class="container">
                 <div class="row row-cols-3 my-4">
-                    <div class="col my-5">
+                    <div v-for="(album, index) in albums" :key="index" class="col my-5">
                         <div class="mf-card w-100">
-                            <div class="top w-100">
-                                <div class="img w-100"></div>
+                            <div class="top w-100 text-center">
+                                <img :src="album.poster" :alt="album.title">
                             </div>
                             <div class="bottom text-center">
                                 <div class="content-bottom">
                                     <h2>
-                                        title
+                                        {{album.title}}
                                     </h2>
                                     <h5>
-                                        artist
+                                        {{album.author}}
                                     </h5>
                                     <h6>
-                                        data
+                                        {{album.year}}
                                     </h6>
                                 </div>
                             </div>

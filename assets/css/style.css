@@ -12,7 +12,6 @@ header img {
 }
 
 main .col .mf-card {
-    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,17 +20,21 @@ main .col .mf-card {
     background-color: #112030;
     border-radius: 8px;
     padding: 20px;
+    height: 400px;
 }
 
-.mf-card .top .img {
-    width: 250px;
-    height: 200px;
-    background-color: red;
+.mf-card .top {
+    height: 50%;
+}
+
+.mf-card .bottom {
+    height: 50%;
 }
 
 .mf-card .top img {
-    width: 80%;
-    object-fit: cover;
+    width: 70%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .mf-card .bottom h2 {
