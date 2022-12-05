@@ -1,0 +1,49 @@
+body {
+   background-color: #1D2D3C;
+}
+
+header {
+    padding: 20px 0;
+    background-color: #06131f;
+}
+
+header img {
+    width: 50px;
+}
+
+main .col .mf-card {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    background-color: #112030;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.mf-card .top .img {
+    width: 250px;
+    height: 200px;
+    background-color: red;
+}
+
+.mf-card .top img {
+    width: 80%;
+    object-fit: cover;
+}
+
+.mf-card .bottom h2 {
+    font-weight: bold;
+}
+
+.mf-card .bottom h5 {
+    font-size: 1.1rem;
+}
+
+.mf-card .bottom h6{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
