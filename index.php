@@ -19,9 +19,17 @@
 <body>
     <div id="app">
         <header>
-            <div class="container">
+            <div class="container d-flex justify-content-between">
                 <div class="logo">
                     <img src="./assets/img/logo-small.svg" alt="Logo Spotify">
+                </div>
+                <div class="filter-genre">
+                    <button class="btn bg-primary" @click="getGenre()"> Show Filters </button>
+                    <ul>
+                        <li v-for="(album,index) in genreAlbums" :key="index">
+                            <a @click="getByFilter(album)" href="#">{{album}}</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </header>

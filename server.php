@@ -16,6 +16,16 @@ if(isset($_GET['description'])) {
     ];
 }
 
+if(isset($_POST['getGenre'])) {
+    $albumFilter = [];
+    foreach($listAlbum as $album){
+        if($album["genre"] === $_POST['getGenre']) {
+            $albumFilter[] = $album;
+        }
+    }
+    $listAlbum = $albumFilter;
+}
+
 
 header('Content-Type: application/json');
 echo json_encode($listAlbum);

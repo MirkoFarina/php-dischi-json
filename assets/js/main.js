@@ -6,7 +6,8 @@ createApp({
             apiUrl: 'server.php',
             albums: [],
             description: [],
-            isOver: false
+            isOver: false,
+            genreAlbums: []
         }
     },
     methods: {
@@ -31,6 +32,22 @@ createApp({
         close(){
             this.description = [];
             this.isOver = false;
+        },
+        getGenre(){
+            this.albums.forEach(album => {
+                if(!this.genreAlbums.includes(album.genre)) {
+                    this.genreAlbums.push(album.genre)
+                }
+            });
+        },
+        getByFilter(album) {
+            const data = new FormData();
+            data.append('getGenre', album);
+
+            axios.post(this.apiUrl, data)
+                .then(result => {
+                    this.albums = result.data;
+                })
         }
     },
     mounted(){
