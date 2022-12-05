@@ -21,6 +21,7 @@ main .col .mf-card {
     border-radius: 8px;
     padding: 20px;
     height: 400px;
+    cursor: pointer;
 }
 
 .mf-card .top {

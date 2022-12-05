@@ -29,7 +29,7 @@
         <main>
             <div class="container">
                 <div class="row row-cols-3 my-4">
-                    <div v-for="(album, index) in albums" :key="index" class="col my-5">
+                    <div  @click="getDescription(index)" v-for="(album, index) in albums" :key="index" class="col my-5">
                         <div class="mf-card w-100">
                             <div class="top w-100 text-center">
                                 <img :src="album.poster" :alt="album.title">
