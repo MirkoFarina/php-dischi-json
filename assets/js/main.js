@@ -7,7 +7,8 @@ createApp({
             albums: [],
             description: [],
             isOver: false,
-            genreAlbums: []
+            genreAlbums: [],
+            showFilters: true
         }
     },
     methods: {
@@ -34,6 +35,7 @@ createApp({
             this.isOver = false;
         },
         getGenre(){
+            this.showFilters = false;
             this.albums.forEach(album => {
                 if(!this.genreAlbums.includes(album.genre)) {
                     this.genreAlbums.push(album.genre)

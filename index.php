@@ -24,7 +24,8 @@
                     <img src="./assets/img/logo-small.svg" alt="Logo Spotify">
                 </div>
                 <div class="filter-genre">
-                    <button class="btn bg-primary" @click="getGenre()"> Show Filters </button>
+                    <button v-if="showFilters" class="btn bg-primary" @click="getGenre()"> Show Filters </button>
+                    <a v-else class="btn bg-primary" href="index.php">Refresh</a>
                     <ul>
                         <li v-for="(album,index) in genreAlbums" :key="index">
                             <a @click="getByFilter(album)" href="#">{{album}}</a>

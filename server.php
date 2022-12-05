@@ -18,11 +18,14 @@ if(isset($_GET['description'])) {
 
 if(isset($_POST['getGenre'])) {
     $albumFilter = [];
+    // se il genere che mi arriva è lo stesso dell'album allora lo push in album filter
     foreach($listAlbum as $album){
         if($album["genre"] === $_POST['getGenre']) {
             $albumFilter[] = $album;
         }
     }
+
+    // listalbum diventa album filter cosi' da mostrarmi solo quelli che io sto filtrando
     $listAlbum = $albumFilter;
 }
 
