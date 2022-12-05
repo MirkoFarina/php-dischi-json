@@ -9,7 +9,12 @@ createApp({
             isOver: false,
             genreAlbums: [],
             showFilters: true,
-            isRefresh: false
+            isRefresh: false,
+            addTitle: '',
+            addAuthor:'',
+            addYear: '',
+            addImg: '',
+            addGenre: ''
         }
     },
     methods: {
@@ -50,6 +55,27 @@ createApp({
 
             axios.post(this.apiUrl, data)
                 .then(result => {
+                    this.albums = result.data;
+                })
+        },
+        addNewAlbum(){
+            const data = {
+                name: this.addTitle,
+                author: this.addAuthor,
+                genre: this.addGenre,
+                year: this.addYear,
+                img: this.addImg
+            }
+
+            axios.post(this.apiUrl, data, {
+                headers: {'Content-Type' : 'multipart/form-data'}
+            })
+                .then(result => {
+                    this.addTitle = '';
+                    this.addAuthor= '';
+                    this.addGenre = '';
+                    this.addImg = '';
+                    this.addYear = '';
                     this.albums = result.data;
                 })
         }

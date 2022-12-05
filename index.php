@@ -81,6 +81,31 @@
                             </div>
                         </div>
                 </div>  
+                <div class="add-new-album">
+                    <div>
+                        <label for="name-album" class="form-label">Inserisci il titolo dell'Album</label>
+                        <input v-model.trim="addTitle" type="text" class="form-control" id="name-album">
+                    </div>
+                    <div>
+                        <label for="name-author" class="form-label">Inserisci il nome dell'autore</label>
+                        <input v-model.trim="addAuthor" type="text" class="form-control" id="name-author">
+                    </div>
+                    <div>
+                        <label for="name-year" class="form-label">Inserisci l'anno di produzione</label>
+                        <input v-model.trim="addYear" type="number" class="form-control" id="name-year">
+                    </div>
+                    <div>
+                        <label for="name-url" class="form-label">Inserisci l'url dell'immagine</label>
+                        <input v-model.trim="addImg" type="text" class="form-control" id="name-url">
+                    </div>
+                    <div>
+                        <label for="name-genre" class="form-label">Inserisci il Genere</label>
+                        <input v-model.trim="addGenre" type="text" class="form-control" id="name-genre">
+                    </div>
+                    <div class="d-flex justify-content-center my-5">
+                        <button @click="addNewAlbum()"  class="btn bg-primary"> ADD ALBUM</button>
+                    </div>
+                </div>
             </div>
         </main>
     </div>

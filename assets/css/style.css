@@ -71,3 +71,13 @@ main .col .mf-card {
     color: white;
     cursor: pointer;
 }
+
+.add-new-album {
+    color: white;
+    padding: 100px;
+    background-color: rgba(17, 32, 49, .8);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

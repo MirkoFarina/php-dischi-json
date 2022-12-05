@@ -30,5 +30,17 @@ if(isset($_POST['getGenre'])) {
 }
 
 
+if(isset($_POST['name']) && isset($_POST['author']) && isset($_POST['genre']) && isset($_POST['year']) && isset($_POST['img'])) {
+    $newAlbum = [
+        'title' => $_POST['name'],
+        'author' => $_POST['author'],
+        'year' => $_POST['year'],
+        'poster' => $_POST['img'],
+        'genre' => $_POST['genre']
+    ];
+    $listAlbum[] = $newAlbum;
+    file_put_contents('dischi.json', json_encode($listAlbum));
+}
+
 header('Content-Type: application/json');
 echo json_encode($listAlbum);
