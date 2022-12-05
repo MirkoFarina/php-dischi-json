@@ -10,7 +10,8 @@ if(isset($_GET['description'])) {
     $listAlbum = [
           [
             'genre' => $listAlbum[$_GET['description']]["genre"],
-            'author' => $listAlbum[$_GET['description']]["author"]
+            'author' => $listAlbum[$_GET['description']]["author"],
+            'poster' => $listAlbum[$_GET['description']]["poster"]
           ]
     ];
 }

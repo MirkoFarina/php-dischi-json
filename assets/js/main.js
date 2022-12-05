@@ -5,7 +5,8 @@ createApp({
         return {
             apiUrl: 'server.php',
             albums: [],
-            description: []
+            description: [],
+            isOver: false
         }
     },
     methods: {
@@ -16,6 +17,7 @@ createApp({
                 })
         },
         getDescription(index){
+            this.isOver = true;
             // faccio la chiamata al server passando l'index della card
             axios.get(this.apiUrl, {params: {
                 // al server passo il params description con l'index per ottenre la descrizione dell'elemento cliccato

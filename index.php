@@ -27,7 +27,7 @@
         </header>
 
         <main>
-            <div class="container">
+            <div class="container position-relative">
                 <div class="row row-cols-3 my-4">
                     <div  @click="getDescription(index)" v-for="(album, index) in albums" :key="index" class="col my-5">
                         <div class="mf-card w-100">
@@ -50,6 +50,28 @@
                         </div>
                     </div>
                 </div>
+                <div v-if="isOver" class="overlayer">
+                        <div @click="isOver = false" class="close">
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                        <div v-for="(album, index) in description" :key="index" class="col my-5">
+                            <div class="mf-over-card w-100">
+                                <div class="top w-100 text-center">
+                                    <img :src="album.poster" :alt="album.title">
+                                </div>
+                                <div class="bottom text-center">
+                                    <div class="content-bottom">
+                                        <h2>
+                                            {{album.author}}
+                                        </h2>
+                                        <h5>
+                                            {{album.genre}}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>  
             </div>
         </main>
     </div>
