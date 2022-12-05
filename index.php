@@ -51,10 +51,10 @@
                     </div>
                 </div>
                 <div v-if="isOver" class="overlayer">
-                        <div @click="isOver = false" class="close">
+                        <div @click="close()" class="close">
                             <i class="fa-solid fa-x"></i>
                         </div>
-                        <div v-for="(album, index) in description" :key="index" class="col my-5">
+                        <div v-for="(album, index) in description" :key="index" class="content-over">
                             <div class="mf-over-card w-100">
                                 <div class="top w-100 text-center">
                                     <img :src="album.poster" :alt="album.title">

@@ -27,6 +27,10 @@ createApp({
                     // salvo il risultato in un array
                     this.description = results.data
                 })
+        },
+        close(){
+            this.description = [];
+            this.isOver = false;
         }
     },
     mounted(){
