@@ -61,6 +61,7 @@ createApp({
         },
         addNewAlbum(){
             this.isNew = false;
+            // mando i data che servono per la composizione della card, utilizzando il v-model degli input
             const data = {
                 name: this.addTitle,
                 author: this.addAuthor,
@@ -72,6 +73,7 @@ createApp({
             axios.post(this.apiUrl, data, {
                 headers: {'Content-Type' : 'multipart/form-data'}
             })
+            // ripulisco i campi e asseggno di nuovo l'array albums
                 .then(result => {
                     this.addTitle = '';
                     this.addAuthor= '';
